@@ -4,10 +4,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.view.View;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     public int [][] posi = new int [3][3];
+    public int [] px = new int [3];
+    public int [] py = new int [3];
+
+    public int a, b;
+
+    public boolean pasx, pasy, pas;
 
     public ImageButton ima1x1 = (ImageButton) findViewById(R.id.ima1x1);
     public ImageButton ima1x2 = (ImageButton) findViewById(R.id.ima1x2);
@@ -35,9 +42,61 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+
+    }
+
+    public void AsigP (){
+        for (int i=0; i<=1; i++){
+            int cont1 = 0, cont2 = 0;
+            for (int j=0; j<=7; j++){
+                while(pas){
+                    while(pasx){
+                        //a = Math.floor(Math.random()*4+1); (ambas opciones me dan error
+                        //b = (Math.random() * 4) + 1;
+                        for(int v=0;v<=px.length;v++){
+                            if(a == px[v]){
+                                pasx= false;
+                            } else{
+                                px[cont1]=a;
+                                pasx =true;
+                                cont1++;
+                            }
+
+                        }
+
+                    }
+
+                    while(pasy){
+                        //a = Math.floor(Math.random()*4+1); (ambas opciones me dan error
+                        //b = (Math.random() * 4) + 1;
+                        for(int v=0;v<=py.length;v++){
+                            if(b == py[v]){
+                                pasy= false;
+                            }else{
+                                py[cont2]=b;
+                                pasy =true;
+                                cont2++;
+                            }
+
+                        }
+
+                    }
+                    if(posi[a][b]!=1){
+                        posi[a][b]=1;
+                        pas=true;
+                    } else{
+                        pas=false;
+                    }
+                }
+
+
+            }
+        }
     }
 
     public void onClick(View view) {
+
         if(ima1x1.callOnClick()){
             //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
             ima1x1.setImageResource(posi[0][0]);
