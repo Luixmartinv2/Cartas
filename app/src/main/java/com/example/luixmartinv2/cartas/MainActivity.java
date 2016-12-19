@@ -13,8 +13,9 @@ public class MainActivity extends AppCompatActivity {
     public int [] px = new int [3];
     public int [] py = new int [3];
 
-    public int a, b;
+    public int a, b, a2, b2,a3,b3;
     public int id=0;
+    public int vol=0;
 
     public boolean pasx, pasy, pas;
 
@@ -109,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Cambia la imagen por la del id asignado a su posicion
     public void IdMagen( int x, int y){
+
+
         if(x==0 && y==0){
             ima1x1.setImageResource(posiID[x][y]);
         } else if(x==0 && y==1){
@@ -146,6 +149,64 @@ public class MainActivity extends AppCompatActivity {
             ima4x2.setImageResource(posiID[x][y]);
         }
 
+        if(vol==0){
+            a2=x;
+            b2=y;
+            vol++;
+        }else if(vol==1){
+            a3=x;
+            b2=y;
+            vol++;
+        }else {
+            a2=x;
+            b2=y;
+            vol=1;
+
+        }
+
+    }
+
+    //voltea las cartas
+    public void IdMagenVol( int x, int y){
+
+
+        if(x==0 && y==0){
+            ima1x1.setImageResource(R.mipmap.ic_launcher);
+        } else if(x==0 && y==1){
+            ima1x2.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==0 && y==2){
+            ima1x3.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==0 && y==3){
+
+            ima1x4.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==1 && y==0){
+            ima2x1.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==1 && y==1){
+            ima2x2.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==1 && y==2){
+            ima2x3.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==1 && y==3){
+
+            ima2x4.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==2 && y==0){
+            ima3x1.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==2 && y==1){
+            ima3x2.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==2 && y==2){
+            ima3x3.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==2 && y==3){
+
+            ima3x4.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==3 && y==0){
+            ima4x2.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==3 && y==1){
+            ima4x2.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==3 && y==2){
+            ima4x2.setImageResource(R.mipmap.ic_launcher);
+        }else if(x==3 && y==3){
+            ima4x2.setImageResource(R.mipmap.ic_launcher);
+        }
+
 
     }
 
@@ -154,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
 
         int cont=0;
         int x1=0, x2=0,y1=0,y2=0;
-        if(cont<2){
+        if(cont<=2){
             if(ima1x1.callOnClick()){
                 //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
                 IdMagen( 0, 0 );
@@ -380,14 +441,25 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }else {
+            //si coinciden no se voltean de nuevo
             if(posiID[x1][y1]==posiID[x2][y2]){
+                cont=0;
+                x1=0;
+                y1=0;
+                x2=0;
+                y2=0;
+            } else{// si no coinciden se voltean
+
+                IdMagenVol(a2,b2);
+                IdMagenVol(a3,b3);
+                cont=0;
+                x1=0;
+                y1=0;
+                x2=0;
+                y2=0;
 
             }
-            cont=0;
-            x1=0;
-            y1=0;
-            x2=0;
-            y2=0;
+
         }
 
 
