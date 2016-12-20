@@ -50,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void AsigPos (){
+    //asigna ids a las posiciones
+    protected void AsigPos (){
         //son dos vuletas porque son dos veces 8 ids
         for (int i=0; i<=1; i++){
             int cont1 = 0, cont2 = 0;
@@ -59,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 while(pas){
                     //pilla una posición x al azar
                     while(pasx){
-                        //a = Math.floor(Math.random()*4); (ambas opciones me dan error)
-                        //b = (Math.random() * 4);       (modificar para que sea entre 0 y 3
+                        b = (int) (Math.floor(Math.random() * (4 - 1)) + 1);
+                        b--;
                         for(int v=0;v<=px.length;v++){
                             if(a == px[v]){
                                 pasx= false;
@@ -75,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //pilla una posición y al azar
                     while(pasy){
-                        //a = Math.floor(Math.random()*4+1); (ambas opciones me dan error)
-                        //b = (Math.random() * 4) + 1;
+                        a = (int) (Math.floor(Math.random() * (4 - 1)) + 1);
+                        a --;
                         for(int v=0;v<=py.length;v++){
                             if(b == py[v]){
                                 pasy= false;
@@ -211,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // llama al metodo IdMagen cada vez que clicas una imagen, y cuando clicas dos imagenes estas vuelven a su estado original
-    public void onClick(View view) {
+    protected void onClick(View view) {
 
         int cont=0;
         int x1=0, x2=0,y1=0,y2=0;
