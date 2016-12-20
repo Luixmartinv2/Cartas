@@ -19,30 +19,52 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean pasx, pasy, pas;
 
-    public ImageButton ima1x1 = (ImageButton) findViewById(R.id.ima1x1);
-    public ImageButton ima1x2 = (ImageButton) findViewById(R.id.ima1x2);
-    public ImageButton ima1x3 = (ImageButton) findViewById(R.id.ima1x3);
-    public ImageButton ima1x4 = (ImageButton) findViewById(R.id.ima1x4);
+    public ImageButton ima1x1 ;
+    public ImageButton ima1x2 ;
+    public ImageButton ima1x3 ;
+    public ImageButton ima1x4 ;
 
-    public ImageButton ima2x1 = (ImageButton) findViewById(R.id.ima2x1);
-    public ImageButton ima2x2 = (ImageButton) findViewById(R.id.ima2x2);
-    public ImageButton ima2x3 = (ImageButton) findViewById(R.id.ima2x3);
-    public ImageButton ima2x4 = (ImageButton) findViewById(R.id.ima2x4);
+    public ImageButton ima2x1 ;
+    public ImageButton ima2x2 ;
+    public ImageButton ima2x3 ;
+    public ImageButton ima2x4 ;
 
-    public ImageButton ima3x1 = (ImageButton) findViewById(R.id.ima3x1);
-    public ImageButton ima3x2 = (ImageButton) findViewById(R.id.ima3x2);
-    public ImageButton ima3x3 = (ImageButton) findViewById(R.id.ima3x3);
-    public ImageButton ima3x4 = (ImageButton) findViewById(R.id.ima3x4);
+    public ImageButton ima3x1 ;
+    public ImageButton ima3x2 ;
+    public ImageButton ima3x3 ;
+    public ImageButton ima3x4 ;
 
-    public ImageButton ima4x1 = (ImageButton) findViewById(R.id.ima4x1);
-    public ImageButton ima4x2 = (ImageButton) findViewById(R.id.ima4x2);
-    public ImageButton ima4x3 = (ImageButton) findViewById(R.id.ima4x3);
-    public ImageButton ima4x4 = (ImageButton) findViewById(R.id.ima4x4);
+    public ImageButton ima4x1 ;
+    public ImageButton ima4x2 ;
+    public ImageButton ima4x3 ;
+    public ImageButton ima4x4 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ima1x1 = (ImageButton) findViewById(R.id.ima1x1);
+        ima1x2 = (ImageButton) findViewById(R.id.ima1x2);
+        ima1x3 = (ImageButton) findViewById(R.id.ima1x3);
+        ima1x4 = (ImageButton) findViewById(R.id.ima1x4);
+
+
+        ima2x1 = (ImageButton) findViewById(R.id.ima2x1);
+        ima2x2 = (ImageButton) findViewById(R.id.ima2x2);
+        ima2x3 = (ImageButton) findViewById(R.id.ima2x3);
+        ima2x4 = (ImageButton) findViewById(R.id.ima2x4);
+
+        ima3x1 = (ImageButton) findViewById(R.id.ima3x1);
+        ima3x2 = (ImageButton) findViewById(R.id.ima3x2);
+        ima3x3 = (ImageButton) findViewById(R.id.ima3x3);
+        ima3x4 = (ImageButton) findViewById(R.id.ima3x4);
+
+        ima4x1 = (ImageButton) findViewById(R.id.ima4x1);
+        ima4x2 = (ImageButton) findViewById(R.id.ima4x2);
+        ima4x3 = (ImageButton) findViewById(R.id.ima4x3);
+        ima4x4 = (ImageButton) findViewById(R.id.ima4x4);
+
 
         AsigPos();
 
@@ -90,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                     }
-                    //comprueva si la posición ya se le ha asignado un valor
+                    //comprueba si la posición ya se le ha asignado un valor
                     if(posi[a][b]!=1){
                         posi[a][b]=1;
                         posiID[a][b]=id;
@@ -211,258 +233,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // llama al metodo IdMagen cada vez que clicas una imagen, y cuando clicas dos imagenes estas vuelven a su estado original
-    protected void onClick(View view) {
 
-        int cont=0;
-        int x1=0, x2=0,y1=0,y2=0;
-        if(cont<=2){
-            if(ima1x1.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 0, 0 );
-                if(cont==0){
-                    x1=0;
-                    y1=0;
-                    cont++;
-                } else if(cont==1){
-                    x2=0;
-                    y2=0;
-                    cont++;
-                }
-
-            }
-            if(ima1x2.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 0, 1);
-                if(cont==0){
-                    x1=0;
-                    y1=1;
-                    cont++;
-                } else if(cont==1){
-                    x2=0;
-                    y2=1;
-                    cont++;
-                }
-            }
-            if(ima1x3.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 0, 2 );
-                if(cont==0){
-                    x1=0;
-                    y1=2;
-                    cont++;
-                } else if(cont==1){
-                    x2=0;
-                    y2=2;
-                    cont++;
-                }
-            }
-            if(ima1x4.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 0, 3 );
-                if(cont==0){
-                    x1=0;
-                    y1=3;
-                    cont++;
-                } else if(cont==1){
-                    x2=0;
-                    y2=3;
-                    cont++;
-                }
-            }
-
-
-
-
-
-            if(ima2x1.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 1, 0 );
-                if(cont==0){
-                    x1=1;
-                    y1=0;
-                    cont++;
-                } else if(cont==1){
-                    x2=1;
-                    y2=0;
-                    cont++;
-                }
-            }
-            if(ima2x2.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 1, 1 );
-                if(cont==0){
-                    x1=1;
-                    y1=1;
-                    cont++;
-                } else if(cont==1){
-                    x2=1;
-                    y2=1;
-                    cont++;
-                }
-            }
-            if(ima2x3.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 1, 2 );
-                if(cont==0){
-                    x1=1;
-                    y1=2;
-                    cont++;
-                } else if(cont==1){
-                    x2=1;
-                    y2=2;
-                    cont++;
-                }
-            }
-            if(ima2x4.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 1, 3 );
-                if(cont==0){
-                    x1=1;
-                    y1=3;
-                    cont++;
-                } else if(cont==1){
-                    x2=1;
-                    y2=3;
-                    cont++;
-                }
-            }
-
-
-
-
-
-            if(ima3x1.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 2,0 );
-                if(cont==0){
-                    x1=2;
-                    y1=0;
-                    cont++;
-                } else if(cont==1){
-                    x2=2;
-                    y2=0;
-                    cont++;
-                }
-            }
-            if(ima3x2.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 2,1 );
-                if(cont==0){
-                    x1=2;
-                    y1=1;
-                    cont++;
-                } else if(cont==1){
-                    x2=2;
-                    y2=1;
-                    cont++;
-                }
-            }
-            if(ima3x3.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 2,2 );
-                if(cont==0){
-                    x1=2;
-                    y1=2;
-                    cont++;
-                } else if(cont==1){
-                    x2=2;
-                    y2=2;
-                    cont++;
-                }
-            }
-            if(ima3x4.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 2,3 );
-                if(cont==0){
-                    x1=2;
-                    y1=3;
-                    cont++;
-                } else if(cont==1){
-                    x2=2;
-                    y2=3;
-                    cont++;
-                }
-            }
-
-
-
-
-            if(ima4x1.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 3,0 );
-                if(cont==0){
-                    x1=3;
-                    y1=0;
-                    cont++;
-                } else if(cont==1){
-                    x2=3;
-                    y2=0;
-                    cont++;
-                }
-            }
-            if(ima4x2.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 3,1 );
-                if(cont==0){
-                    x1=3;
-                    y1=1;
-                    cont++;
-                } else if(cont==1){
-                    x2=3;
-                    y2=1;
-                    cont++;
-                }
-            }
-            if(ima4x3.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 3,2 );
-                if(cont==0){
-                    x1=3;
-                    y1=2;
-                    cont++;
-                } else if(cont==1){
-                    x2=3;
-                    y2=2;
-                    cont++;
-                }
-            }
-            if(ima4x4.callOnClick()){
-                //ima1x1.setImageResource(R.drawable.ima1); asi cambiamos la imagen
-                IdMagen( 3,3);
-                if(cont==0){
-                    x1=3;
-                    y1=3;
-                    cont++;
-                } else if(cont==1){
-                    x2=3;
-                    y2=3;
-                    cont++;
-                }
-            }
-
-        }else {
-            //si coinciden no se voltean de nuevo
-            if(posiID[x1][y1]==posiID[x2][y2]){
-                cont=0;
-                x1=0;
-                y1=0;
-                x2=0;
-                y2=0;
-            } else{// si no coinciden se voltean
-
-                IdMagenVol(a2,b2);
-                IdMagenVol(a3,b3);
-                cont=0;
-                x1=0;
-                y1=0;
-                x2=0;
-                y2=0;
-
-            }
-
-        }
-
-
-    }
 }
